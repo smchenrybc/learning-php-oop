@@ -4,6 +4,8 @@ class MyClass {
 
   public $prop1 = "I'm a class property!";
 
+  public static $count = 0;
+
   public function __construct() {
     echo '<p>The class <em>' . __CLASS__ . '</em> was instantiated!</p>';
   }
@@ -11,6 +13,10 @@ class MyClass {
   // public function __destruct() {
   //   echo '<p>The class <em>' . __CLASS__ . '</em> was destroyed!</p>';
   // }
+
+  public function __toString() {
+    return '<p>Using the <code>toString()</code> method: ' . $this->getProperty() . '</p>';
+  }
 
   public function setProperty( $newVal ) {
     $this->prop1 = $newVal;
@@ -20,14 +26,14 @@ class MyClass {
     return $this->prop1;
   }
 
-  public function __toString() {
-    return '<p>Using the <code>toString()</code> method: ' . $this->getProperty() . '</p>';
+  public static function plusOne() {
+    return '<span class="block">The count is <em>' . ++self::$count . '</em>.</span>';
   }
 
 }
 
 
-class MySecondClass extends MyClass {
+class MyOtherClass extends MyClass {
   public function __construct() {
     // call the parent class's constructor
     parent::__construct();
@@ -38,5 +44,9 @@ class MySecondClass extends MyClass {
 
   public function newMethod() {
     echo '<p>From a new method in <em>' . __CLASS__ . '</em>.</p>';
+  }
+
+  public function callProtected() {
+    return $this->getProperty();
   }
 }

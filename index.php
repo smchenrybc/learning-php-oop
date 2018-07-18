@@ -1,4 +1,10 @@
 <?php
+/**
+ * index.php
+ *
+ * @link https://code.tutsplus.com/tutorials/object-oriented-php-for-beginners--net-12762
+ */
+
 // turn on errors
 error_reporting(1);
 error_reporting(E_ALL);
@@ -32,6 +38,9 @@ require "classes.php";
       padding: 3px 6px;
       background-color: #DDD;
     }
+    .block {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -55,12 +64,22 @@ require "classes.php";
 
 
   // create a second object
-  $newobj = new MySecondClass;
+  $newobj = new MyOtherClass;
 
   echo $newobj->newMethod();
 
-  echo $newobj->getProperty();
+  echo $newobj->callProtected();
   ?>
+
+  <!-- Loop -->
+  <p>
+    <?php
+    // while loop to use static count
+    do {
+      echo MyClass::plusOne();
+    } while ( MyClass::$count < 10 );
+    ?>
+  </p>
 
 </body>
 </html>
