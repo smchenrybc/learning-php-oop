@@ -4,8 +4,8 @@ error_reporting(1);
 error_reporting(E_ALL);
 ini_set("error_reporting", E_ALL);
 
-// require the class
-require "class.php";
+// require the classes
+require "classes.php";
 ?>
 
 <html>
@@ -52,6 +52,14 @@ require "class.php";
   <?php
   // Output message at end of file
   echo "<p>Page is finished rendering <em>here</em>.</p>";
+
+
+  // create a second object
+  $newobj = new MySecondClass;
+
+  echo $newobj->newMethod();
+
+  echo $newobj->getProperty();
   ?>
 
 </body>
