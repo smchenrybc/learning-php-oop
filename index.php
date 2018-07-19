@@ -11,7 +11,9 @@ error_reporting(E_ALL);
 ini_set("error_reporting", E_ALL);
 
 // require the classes
-require "classes.php";
+function __autoload( $class_name ) {
+  include_once 'inc/class.' . $class_name . '.inc.php';
+}
 ?>
 
 <html>
@@ -85,6 +87,9 @@ require "classes.php";
     } while ( MyClass::$count < 10 );
     ?>
   </p>
+
+  <!-- Navigation -->
+  <a href="procedural.php">Link to procedural example</a>&nbsp; | &nbsp;<a href="oop.php">Link to OOP example</a>
 
 </body>
 </html>

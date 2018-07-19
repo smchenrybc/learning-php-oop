@@ -27,7 +27,7 @@ class MyClass {
   }
 
   public static function plusOne() {
-    return '<span class="block">The count is <em>' . ++self::$count . '</em>.</span>';
+    return '<span class="block">The count is <em>' . self::$count++ . '</em>.</span>';
   }
 
 }
