@@ -17,22 +17,27 @@ require "classes.php";
 <html>
 <head>
   <!-- Web Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,400i,600,700" rel="stylesheet">
 
   <link href="assets/css/highlight.css" rel="stylesheet">
   <script src="assets/js/highlight.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
   <style>
+    html {
+      font-size: 20px;
+    }
     body {
       padding: 20px;
       color: #333;
       background-color: #EEE;
-      font-family: Ubuntu, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 1rem;
+      font-family: "Source Sans Pro", Arial, "Helvetica Neue", Helvetica, sans-serif;
     }
     code, pre {
       border-radius: 3px;
-      font-family: "Ubuntu Mono", monospace;
+      font-size: 0.9rem;
+      font-family: "Source Code Pro", monospace;
     }
     code {
       padding: 3px 6px;
@@ -72,7 +77,7 @@ require "classes.php";
   ?>
 
   <!-- Loop -->
-  <p>
+  <p class="loop">
     <?php
     // while loop to use static count
     do {
