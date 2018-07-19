@@ -89,7 +89,7 @@ function __autoload( $class_name ) {
   </p>
 
   <!-- Navigation -->
-  <a href="procedural.php">Link to procedural example</a>&nbsp; | &nbsp;<a href="oop.php">Link to OOP example</a>
+  <a href="pages/procedural.php">Link to procedural example</a>&nbsp; | &nbsp;<a href="pages/oop.php">Link to OOP example</a>
 
 </body>
 </html>

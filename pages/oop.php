@@ -1,6 +1,6 @@
 <?php
 /**
- * procedural.php
+ * oop.php
  */
 
 // turn on errors
@@ -8,28 +8,28 @@ error_reporting(1);
 error_reporting(E_ALL);
 ini_set("error_reporting", E_ALL);
 
-// functions
-function changeJob( $person, $newjob ) {
-  $person['job'] = $newjob;
-  return $person;
+// class goes here:
+class Person {
+
+  private $_name;
+  private $_job;
+  private $_age;
+
+  public function __construct( $name, $job, $age ) {
+    $this->_name = $name;
+    $this->_job = $job;
+    $this->_age = $age;
+  }
+
+  public function changeJob( $newjob ) {
+    $this->_job = $newjob;
+  }
+
+  public function happyBirthday() {
+    $this->_age++;
+  }
+
 }
-
-function happyBirthday( $person ) {
-  $person['age']++;
-  return $person;
-}
-
-$person1 = array(
-  'name' => 'Tom',
-  'job' => 'button pusher',
-  'age' => 34
-);
-
-$person2 = array(
-  'name' => 'John',
-  'job' => 'lever puller',
-  'age' => 41
-);
 ?>
 
 <html>
@@ -69,26 +69,31 @@ $person2 = array(
 <body>
 
   <?php
-  // Output starting values for people
+  // Create new people
+  $person1 = new Person( 'Tom', 'button pusher', 34 );
+  $person2 = new Person( 'John', 'lever puller', 41 );
+
+  // Output the guys
   echo '<pre>Person 1: ' . print_r( $person1, TRUE ) . '</pre>';
   echo '<pre>Person 2: ' . print_r( $person2, TRUE ) . '</pre>';
 
-  // Tom got a new job and had a birthday
-  $person1 = changeJob( $person1, 'box mover' );
-  $person1 = happyBirthday( $person1 );
+  // Tom gets a new job and has a birthday
+  $person1->changeJob( 'box mover' );
+  $person1->happyBirthday();
 
-  // John had a birthday
-  $person2 = happyBirthday( $person2 );
+  // John has a birthday
+  $person2->happyBirthday();
 
   // Output new values
   echo '<pre>Person 1: ' . print_r( $person1, TRUE ) . '</pre>';
   echo '<pre>Person 2: ' . print_r( $person2, TRUE ) . '</pre>';
+
   ?>
 
   <!-- Navigation -->
-  <a href="oop.php">Link to OOP example</a>
+  <a href="procedural.php">Link to procedural example</a>
 
-  <a class="block" href="index.php" style="margin-top: 1em;">&laquo; Go home</a>
+  <a class="block" href="../index.php" style="margin-top: 1em;">&laquo; Go home</a>
 
 </body>
 </html>
