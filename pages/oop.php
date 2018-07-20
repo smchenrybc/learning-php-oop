@@ -3,11 +3,6 @@
  * oop.php
  */
 
-// turn on errors
-error_reporting(1);
-error_reporting(E_ALL);
-ini_set("error_reporting", E_ALL);
-
 // class goes here:
 class Person {
 

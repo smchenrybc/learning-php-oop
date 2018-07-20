@@ -5,11 +5,6 @@
  * @link https://code.tutsplus.com/tutorials/object-oriented-php-for-beginners--net-12762
  */
 
-// turn on errors
-error_reporting(1);
-error_reporting(E_ALL);
-ini_set("error_reporting", E_ALL);
-
 // require the classes
 function __autoload( $class_name ) {
   include_once 'inc/class.' . $class_name . '.inc.php';

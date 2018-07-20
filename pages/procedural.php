@@ -3,11 +3,6 @@
  * procedural.php
  */
 
-// turn on errors
-error_reporting(1);
-error_reporting(E_ALL);
-ini_set("error_reporting", E_ALL);
-
 // functions
 function changeJob( $person, $newjob ) {
   $person['job'] = $newjob;
